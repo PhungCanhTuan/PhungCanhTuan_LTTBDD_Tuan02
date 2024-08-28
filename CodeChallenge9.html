@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+</head>
+
+<body>
+    <h1>Weather Forecast</h1>
+
+    <div id="forecast-output"></div>
+
+    <script>
+        function printForecast(arr) {
+            let forecastString = '';
+            for (let i = 0; i < arr.length; i++) {
+                forecastString += `... ${arr[i]}°C in ${i + 1} day(s) `;
+            }
+            return forecastString;
+        }
+        
+
+        // Test data 
+        const data1 = [17, 21, 23];
+        const data2 = [12, 5, -5, 0, 4];
+
+        // Get a reference to the div where we want to display the output
+        const forecastOutput = document.getElementById('forecast-output');
+
+        // Call the function and display the output in the div
+        const data1Output = printForecast(data1);
+        const data2Output = printForecast(data2);
+
+        // Create and append paragraphs to display the forecasts
+        const paragraph1 = document.createElement('p');
+        paragraph1.textContent = `Data 1: ${data1Output}`;
+        forecastOutput.appendChild(paragraph1);
+
+        const paragraph2 = document.createElement('p');
+        paragraph2.textContent = `Data 2: ${data2Output}`;
+        forecastOutput.appendChild(paragraph2);
+    </script>
+</body>
+
+</html>
